@@ -1,28 +1,45 @@
+<style lang="stylus">
+//全局滚动条样式
+&::-webkit-scrollbar
+    height 8px
+    width 8px
+
+&::-webkit-scrollbar-thumb:horizontal, &::-webkit-scrollbar-thumb:vertical
+    border-radius 6px
+    -webkit-box-shadow inset 0 0 2px rgba(0, 0, 0, 0.3)
+    background-color #d4dedf
+
+&::-webkit-scrollbar-track:vertical, &::-webkit-scrollbar-track:horizontal
+    border-radius 6px
+    -webkit-box-shadow inset 0 0 2px rgba(0, 0, 0, 0.3)
+    background-color #fff
+
+html, body
+    width 100%
+    height 100%
+    margin 0
+    padding 0
+
+div, p, a, ul, li
+    margin 0
+    padding 0
+    list-style none
+</style>
+
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App" />
-    </div>
+    <main-body />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import mainBody from "./components/mainBody.vue";
 
 export default {
-    name: "app",
+    "#el": "app",
+    name: "",
     components: {
-        HelloWorld
+        mainBody
     }
 };
 </script>
 
-<style>
-#app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-</style>
+
