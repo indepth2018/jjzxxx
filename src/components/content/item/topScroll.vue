@@ -40,19 +40,15 @@ export default {
         let scrollWord = this.$refs.scrollWord;
         let scrollUl = this.$refs.scrollUl;
         function scrollUp() {
-            scrollWord.screenLeft >= scrollUl.offsetWidth
-                ? (scrollWord.scrollLeft = 0)
-                : scrollWord.scrollLeft++;
+            scrollWord.scrollLeft++;
         }
         let scrollTime = setInterval(scrollUp, 50);
-        scrollWord.addEventListener(
-            "mouseover",
-            () => {
-                clearInterval(scrollTime);
-            },
-            false
-        );
-        scrollWord.addEventListener("mouseout", scrollUp, false);
+        scrollWord.onmouseover = () => {
+            clearInterval(scrollTime);
+        };
+        scrollWord.onmouseout = () => {
+            scrollTime = setInterval(scrollUp, 50);
+        };
     }
 };
 </script>
