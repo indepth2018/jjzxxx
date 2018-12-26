@@ -5,7 +5,10 @@
 </style>
 
 <template>
-    <div class="secContent">2</div>
+    <div class="secContent">2
+
+    </div>
+
 </template>
 
 <script>

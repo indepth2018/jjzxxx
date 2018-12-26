@@ -1,7 +1,7 @@
 <style lang='stylus'>
 .mainHead
     height 230px
-    border 1px solid #2c2c2c
+    //border 1px solid #2c2c2c
     display block
 </style>
 

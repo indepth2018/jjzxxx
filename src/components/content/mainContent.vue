@@ -1,7 +1,7 @@
 <style lang='stylus'>
 .content
     height 800px
-    border 1px solid #a26868
+    //border 1px solid #a26868
     display block
 
     .menuBar
@@ -14,14 +14,15 @@
             li
                 width 158px
                 height 36px
-                border 1px solid #000
+                //border 1px solid #000
                 float left
                 text-align center
                 cursor pointer
                 line-height 36px
+                font-size 13px
 
                 &:hover
-                    background #9e9797
+                    //background #9e9797
 
                 .menu-item
                     padding 8px 40px
@@ -40,7 +41,7 @@
                     <router-link to="./first" class="menu-item">网站首页</router-link>
                 </li>
                 <li>
-                    <router-link to="./second" class="menu-item">2</router-link>
+                    <router-link to="./second" class="menu-item">学风建设</router-link>
                 </li>
                 <li>3</li>
                 <li>4</li>
