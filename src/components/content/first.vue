@@ -23,17 +23,21 @@
             <div class="col-a">
                 <carousel></carousel>
             </div>
-
         </div>
+        <div class="row-area">
+            <tabsPage></tabsPage>
+        </div>
+    </div>
     </div>
 </template>
 
 <script>
 import carousel from "./item/carousel";
 import topScroll from "./item/topScroll";
+import tabsPage from "./item/tabsPage";
 export default {
     name: "",
-    components: { carousel, topScroll },
+    components: { carousel, topScroll, tabsPage },
     data() {
         return {};
     },
