@@ -1,17 +1,26 @@
 <style lang='stylus'>
-.mainBody
-    width 960px
-    margin 0 auto
+.totalPage
+    //background #A2CB7F
+    background #e5f6fe
+
+    .mainBody
+        width 960px
+        margin 0 auto
+        background #e5f6fe
+        padding-bottom 20px
 </style>
 
 <template>
-    <div class="mainBody">
-
+    <div class="totalPage">
         <main-head></main-head>
-        <main-content></main-content>
-        <main-foot></main-foot>
+        <div class="mainBody">
 
+            <main-content></main-content>
+            <main-foot></main-foot>
+
+        </div>
     </div>
+
 </template>
 
 <script>

@@ -2,6 +2,7 @@
 .scroll
     height 25px
     margin 9px 0
+    user-select none
 
     //overflow hidden
     //white-space nowrap
@@ -33,7 +34,6 @@
         ul
             li
                 display inline-block
-                padding-left 40px
                 margin-right 40px
                 overflow hidden
 
@@ -61,18 +61,13 @@
 
         <div class="scrollWord" ref="scrollWord">
             <ul ref="scrollUl1" style="float:left">
-                <li>
-                    <span class="newsLink"><a router-link="{name: 'second'}" title="2018年春季学科教学工作计划（三年级）" target="_blank">2018年春季学科教学工作计划（三年级）</a></span>
-                    <span class="newsDate">2018.12.26</span>
+                <li v-for="(item,index) in contentAndDate">
+                    <span class="newsLink">
+                        <router-link :to="item.turnTo" :title="item.content" target="_blank">{{item.content}}</router-link>
+                    </span>
+                    <span class="newsDate">{{item.date}}</span>
                 </li>
-                <li>
-                    <span class="newsLink"><a router-link="{name: 'second'}" title="2018年春季学科教学工作计划（四年级）" target="_blank">2018年春季学科教学工作计划（四年级）</a></span>
-                    <span class="newsDate">2018.12.26</span>
-                </li>
-                <li>
-                    <span class="newsLink"><a router-link="{name: 'second'}" title="2018年春季学科教学工作计划（六年级）" target="_blank">2018年春季学科教学工作计划（六年级）</a></span>
-                    <span class="newsDate">2018.12.26</span>
-                </li>
+
             </ul>
             <ul ref="scrollUl2"></ul>
         </div>
@@ -87,9 +82,30 @@ export default {
     data() {
         return {};
     },
-    computed: {},
+    computed: {
+        contentAndDate() {
+            let contentAndDate = [];
+            contentAndDate.push({
+                content: "2018年春季学科教学工作计划（三年级）",
+                date: "2018.12.2",
+                turnTo: "/second"
+            });
+            contentAndDate.push({
+                content: "2018年春季学科教学工作计划（四年级）",
+                date: "2018.12.2",
+                turnTo: "/second"
+            });
+            contentAndDate.push({
+                content: "2018年春季学科教学工作计划（五年级）",
+                date: "2018.12.2",
+                turnTo: "/second"
+            });
+            return contentAndDate;
+        }
+    },
     methods: {},
     mounted() {
+        // 滚动js代码
         let scrollWord = this.$refs.scrollWord;
         let scrollUl1 = this.$refs.scrollUl1;
         let scrollUl2 = this.$refs.scrollUl2;

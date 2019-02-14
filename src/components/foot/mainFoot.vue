@@ -1,12 +1,23 @@
 <style lang='stylus'>
 .foot
-    height 230px
+    width 960px
+    height 130px
+    //background #e5f6fe
     border 1px solid #2c2c2c
-    display block
+    border-radius 8px
+    font-size 24px
+    display flex
+    justify-content space-around
+    align-items center
+    //display block
+    color #000
+    //float left
 </style>
 
 <template>
-    <div class="foot"></div>
+    <div class="foot">
+        <h1>-我是个可爱的底部-</h1>
+    </div>
 </template>
 
 <script>

@@ -1,0 +1,40 @@
+.card-menu {
+  user-select: none;
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.card-menu .every-card-top {
+  width: 110px;
+  height: 33px;
+  line-height: 33px;
+  padding: 0 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.card-menu .every-card-content {
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  background: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+.card-menu .every-card-content:hover {
+  color: #7fc41c;
+  text-decoration: underline;
+  transform: scale(1.1, 1.1);
+}
+.card-menu .every-card-content.active {
+  color: #7fc41c;
+  text-decoration: underline;
+}

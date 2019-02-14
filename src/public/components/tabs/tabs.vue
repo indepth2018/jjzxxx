@@ -15,7 +15,8 @@
                     <div ref="navScroll" :class="[prefixCls + '-nav-scroll']">
                         <div ref="nav" :class="[prefixCls + '-nav']" class="nav-text" :style="navStyle">
                             <div :class="barClasses" :style="barStyle"></div>
-                            <div :class="tabCls(item)" v-for="(item, index) in navList" @mouseover="handleChange(index)" @click="handleChange(index)">
+                            <div :class="tabCls(item)" v-for="(item, index) in navList" :style="index===activeIndex?activePane:noActivePane"
+                                @mouseover="handleChange(index)" @click="handleChange(index)">
                                 <Icon v-if="item.icon !== ''" :type="item.icon"></Icon>
                                 <Render v-if="item.labelType === 'function'" :render="item.label"></Render>
                                 <template v-else>{{ item.label }}</template>
@@ -39,7 +40,7 @@ import Emitter from "../../mixins/emitter";
 import elementResizeDetectorMaker from "element-resize-detector";
 
 const prefixCls = "ivu-tabs";
-const transitionTime = 300; // from CSS
+const transitionTime = 10; // from CSS
 
 const getNextTab = (list, activeKey, direction, countDisabledAlso) => {
     const currentIndex = list.findIndex(tab => tab.name === activeKey);
@@ -111,7 +112,17 @@ export default {
                 transform: ""
             },
             scrollable: false,
-            transitioning: false
+            transitioning: false,
+            activeIndex: 0,
+            activePane: {
+                background: "#FFF",
+                color: "#333",
+                "text-decoration": "underline"
+            },
+            noActivePane: {
+                background: "#45AA70",
+                color: "#FFF"
+            }
         };
     },
     computed: {
@@ -242,6 +253,8 @@ export default {
 
             this.transitioning = true;
             setTimeout(() => (this.transitioning = false), transitionTime);
+
+            this.activeIndex = index;
 
             const nav = this.navList[index];
             if (nav.disabled) return;
