@@ -45,6 +45,7 @@
 <script>
 import scoreForTea from "./scoreItem/scoreForTea.vue";
 import scoreForStu from "./scoreItem/scoreForStu.vue";
+
 export default {
     name: "",
 

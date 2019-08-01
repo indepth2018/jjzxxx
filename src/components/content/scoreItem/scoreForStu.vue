@@ -270,7 +270,7 @@ export default {
             if (postData != undefined) {
                 $.ajax({
                     type: "post",
-                    url: "http://192.168.1.105/school/searchSimpleData.php",
+                    url: "http://localhost/school/searchSimpleData.php",
                     data: postData,
                     success: htmltxt => {
                         if (htmltxt) {

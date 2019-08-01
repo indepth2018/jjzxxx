@@ -1,6 +1,5 @@
 <style lang='stylus'>
 .finalFormTea
-    //position absolute
     width 700px
     height 200px
 
@@ -173,6 +172,7 @@
 
 <script>
 import echarts from "echarts";
+import Cookies from "js-cookie";
 export default {
     name: "",
     components: {},
@@ -274,7 +274,19 @@ export default {
                 this.model = name;
             }
         },
+
         analysis() {
+            // Cookies.set("name", "chen");
+            if (!Cookies.get("Tooken") && !sessionStorage.getItem("account")) {
+                this.$Modal.error({
+                    title: "提示",
+                    content: "请先登录",
+                    onOk: () => {
+                        this.$root.bus.$emit("login", true);
+                    }
+                });
+                return;
+            }
             if (!this.model) {
                 this.$Message.error("请选择年级！");
                 return;
@@ -293,7 +305,7 @@ export default {
             this.modal3 = true;
             $.ajax({
                 type: "post",
-                url: "http://192.168.1.105/school/anaClassData.php",
+                url: "http://localhost/school/anaClassData.php",
                 data: postData,
                 success: htmltxt => {
                     if (htmltxt) {
@@ -395,10 +407,10 @@ export default {
                 class: this.model.slice(0, 1),
                 grade: grade
             };
-            console.log(grade);
+
             $.ajax({
                 type: "post",
-                url: "http://192.168.1.105/school/topTwenty.php",
+                url: "http://localhost/school/topTwenty.php",
                 data: postData1,
                 success: htmltxt => {
                     console.log(htmltxt);
@@ -493,7 +505,7 @@ export default {
             });
             $.ajax({
                 type: "post",
-                url: "http://192.168.1.105/school/TwentyToFiften.php",
+                url: "http://localhost/school/TwentyToFiften.php",
                 data: postData1,
                 success: htmltxt => {
                     if (htmltxt) {
@@ -588,6 +600,16 @@ export default {
             });
         },
         comfirm() {
+            if (!Cookies.get("Tooken") && !sessionStorage.getItem("account")) {
+                this.$Modal.error({
+                    title: "提示",
+                    content: "请先登录",
+                    onOk: () => {
+                        this.$root.bus.$emit("login", true);
+                    }
+                });
+                return;
+            }
             if (!this.model) {
                 this.$Message.error("请选择班级！");
                 return;
@@ -607,7 +629,7 @@ export default {
             if (postData != undefined) {
                 $.ajax({
                     type: "get",
-                    url: "http://192.168.1.105/school/searchClassData.php",
+                    url: "http://172.29.37.230/school/searchClassData.php",
                     dataType: "jsonp",
                     jsonp: "callback", //请求类型是回调
                     data: postData,

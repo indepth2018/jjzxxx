@@ -12,19 +12,21 @@
             </div>
             <div class="every-card-content" :class="index===currentMenu?'active':''" @click="clickMenu(index)" v-for="(item,index) in menuItem">{{item}}</div>
         </div>
-        <div v-show="isShow">1111</div>
+
         <div class="news" v-show="isNews">
             <h1>标题</h1>
             <p>内容</p>
         </div>
+        <page :currentMenu="currentMenu" v-show="isMenu"></page>
     </div>
 
 </template>
 
 <script>
+import page from "./item/page.vue";
 export default {
     name: "",
-    components: {},
+    components: { page },
     data() {
         return {
             isShow: false,

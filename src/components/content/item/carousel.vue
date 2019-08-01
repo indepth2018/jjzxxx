@@ -64,6 +64,7 @@ export default {
                     "我校参加雷州市第十四届中小学生田径运动会勇夺佳绩1我校参加雷州市第十四届中小学生田径运动会勇夺佳绩1",
                 turnTo: "/second"
             });
+
             scrollContent.push({
                 img: require("@/public/img/yanxuelvxing1.jpg"),
                 content: "我校开展2018年研学旅行活动",

@@ -14,7 +14,7 @@ import "@/public/css/style.css";
 Vue.component("jx-symbol", symbol);
 Vue.component("jx-tabs", tabs);
 Vue.component("jx-carousel", carousel);
-
+Vue.prototype.bus = new Vue();
 new Vue({
 	render: h => h(App)
 }).$mount("#app");

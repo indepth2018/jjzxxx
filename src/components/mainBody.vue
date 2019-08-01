@@ -19,6 +19,7 @@
             <main-foot></main-foot>
 
         </div>
+        <login></login>
     </div>
 
 </template>
@@ -27,10 +28,10 @@
 import mainHead from "./head/mainHead";
 import mainContent from "./content/mainContent";
 import mainFoot from "./foot/mainFoot";
-
+import login from "./content/item/login.vue";
 export default {
     name: "",
-    components: { mainHead, mainContent, mainFoot },
+    components: { mainHead, mainContent, mainFoot, login },
     data() {
         return {};
     },

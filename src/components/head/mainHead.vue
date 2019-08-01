@@ -41,7 +41,16 @@
 
         img
             width 100%
+            min-width 1520px
             height 350px
+
+    .header
+        width 80px
+        height 35px
+        position absolute
+        right 10px
+        top 10px
+        z-index 299
 </style>
 
 <template>
@@ -53,17 +62,22 @@
             </div>
         </div>
         <div class="top_big">
-            <img src="@/public/img/top_big/top_big.png" alt="">
+            <img src="@/public/img/top_big/top_big.jpg" alt="">
         </div>
+        <div class="header">
+            <loginStatus></loginStatus>
+        </div>
+
     </div>
 </template>
 
 <script>
 import router from "../router/index.js";
+import loginStatus from "../content/item/loginStatus.vue";
 export default {
     name: "",
     router,
-    components: {},
+    components: { loginStatus },
     data() {
         return {};
     },

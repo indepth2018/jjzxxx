@@ -16,7 +16,7 @@
 
 <template>
     <div class="foot">
-        <h1>-我是个可爱的底部-</h1>
+        <h1>-我只是个底部-</h1>
     </div>
 </template>
 

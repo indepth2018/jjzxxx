@@ -33,19 +33,29 @@
 
         <div class="row-area">
             <div class="col-a">
-                <carousel></carousel>
+                <jxlazy time='500'>
+                    <carousel></carousel>
+                </jxlazy>
+
             </div>
+
             <div class="blankArea"></div>
-            <div class="col-b">
-                <schoolIntro></schoolIntro>
-            </div>
+            <jxlazy time='500'>
+                <div class="col-b">
+                    <schoolIntro></schoolIntro>
+                </div>
+            </jxlazy>
             <div class="blankArea"></div>
-            <div class="col-b">
-                <schoolHonor></schoolHonor>
-            </div>
+            <jxlazy time='500'>
+                <div class="col-b">
+                    <schoolHonor></schoolHonor>
+                </div>
+            </jxlazy>
         </div>
         <div class="row-area">
-            <tabsPage></tabsPage>
+            <jxlazy time='700'>
+                <tabsPage></tabsPage>
+            </jxlazy>
         </div>
     </div>
     </div>
@@ -57,9 +67,17 @@ import topScroll from "./item/topScroll";
 import tabsPage from "./item/tabsPage";
 import schoolIntro from "./item/schoolIntro";
 import schoolHonor from "./item/schoolHonor";
+import jxlazy from "@/public/components/jx-lazy.vue";
 export default {
     name: "",
-    components: { carousel, topScroll, tabsPage, schoolIntro, schoolHonor },
+    components: {
+        carousel,
+        topScroll,
+        tabsPage,
+        schoolIntro,
+        schoolHonor,
+        jxlazy
+    },
     data() {
         return {};
     },
